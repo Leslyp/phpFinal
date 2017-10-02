@@ -1,0 +1,242 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}/*# sourceMappingURL=normalize.min.css.map */
+
+html, body, nav {
+  /* becomes the parent element */
+  position: relative; 
+  width: 100%; 
+}
+
+.footerContainer {
+	height: 5%;
+	margin: 20px;
+	color: #A38CA4;
+	text-align: center;
+}
+
+.footerContainer .links img{
+	width: 6%;
+	height: 6%;
+	padding-right: 10%;
+	padding-left: 10%;
+}
+
+h1 {
+ color: #5C135F;
+ text-align: center;
+ text-shadow: 2px 2px 1px grey;
+}
+
+ul.nav-bar {  
+  list-style-type: none;
+  background-color: #A38CA4;
+  /* these keep nav on the top of the page, w/o blank space */
+  padding: 0;
+  margin: 0;
+  /* needed to display floated li's */
+  overflow: hidden;
+}
+
+/* made links float left to display as horizontal on desktop */
+.nav-bar li a {
+  float: left;
+  display: inline-block;
+  padding: 15px 100px;
+  text-decoration: none;
+  color: white;
+  /* make each of the links have the same height, so logo and hamburger icon don't mess up hover */
+  height: 25px;
+}
+
+.nav-bar li a:hover {
+  background-color: #E3D1ED;
+}
+
+/* style for my logo in nav bar */
+#logo {
+  color: #FFFFB7;
+  text-shadow: 2px 2px #E3B960;
+  font-family: 'Chewy', cursive;
+  font-size: 20px;
+}
+/* doesn't show hamburger icon on desktop */
+.nav-bar .home-icon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {  /* for mobile view */
+	/* remove hover color on hamburger icon */
+	.nav-bar .home-icon a:hover {
+	  background-color: transparent;
+	}
+
+  /* removing float left on mobile */
+  .nav-bar li {
+    float: none;
+  }
+  
+  /* removing display inline-block from mobile 
+   displays each link on a seperate line  */
+  .nav-bar li a {
+    display: block;
+  }
+  
+  /* only show name by default on mobile*/
+  .nav-bar li:not(:first-child) {
+    display: none;
+  }
+  
+  /* show home icon and display on same line as name
+  when dropdown is hidden */
+ .nav-bar li.home-icon {
+    display: block;
+    float: right;
+  }
+  
+  /* show home icon on same line as my name
+  when dropdown is shown*/
+  .nav-bar.dropdown .home-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  } 
+  
+  /* used when dropdown is shown */
+  .nav-bar.dropdown li {
+    display: block;
+    float: none;
+  }
+  
+  /* li are shown as block*/
+  .nav-bar.dropdown li a {
+    display: block;
+    float: none;
+  }
+
+  /* make footer icons bigger when page is smaller*/
+  .footerContainer .links img{
+		width: 10%;
+		height: 10%;
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+}
+
+@media screen and (max-width: 1210px) {  /* for mobile view */
+  /* removing float left on mobile */
+  .nav-bar li {
+    float: none;
+  }
+  
+  /* removing display inline-block from mobile 
+   displays each link on a seperate line  */
+  .nav-bar li a {
+    display: block;
+  }
+  
+  /* only show name by default on mobile*/
+  .nav-bar li:not(:first-child) {
+    display: none;
+  }
+  
+  /* show home icon and display on same line as logo
+  when dropdown is hidden */
+ .nav-bar li.home-icon {
+    display: block;
+    float: right;
+  }
+  
+  /* show home icon on same line as logo
+  when dropdown is shown*/
+  .nav-bar.dropdown .home-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  } 
+   
+  /* used when dropdown is shown */
+  .nav-bar.dropdown li {
+    display: block;
+    float: none;
+  }
+  
+  /* li are shown as block*/
+   .nav-bar.dropdown li a {
+    display: block;
+    float: none;
+  }
+}
+
+/* END media query STYLES */
+
+/* START PRODUCTS STYLE */
+.new {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 5%;
+	width: 90%;
+	text-align: center;
+}
+
+.new img {
+	width: 80%;
+	height: 80%;
+
+}
+
+.figures {
+  margin: 20px;
+ 	width: 200px;
+ 	padding: 10px;
+ 	display: inline-block;
+}
+
+.productName {
+	color: #5C135F;
+	font-weight: 600;
+	font: 14px;
+}
+
+.figures img:hover {
+	box-shadow: 3px 3px 2px lavender;
+	border-top: 1px solid lavender;
+	border-left: 1px solid lavender;
+}
+
+.viewBtn {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+}
+
+.formContainer, #cartIcon {
+	text-align: right;
+	margin: 20px;
+}
+
+.submitBtn { 
+	display: inline-block;
+}
+/* END Product STYLES */
+
+/* START PRODUCT DETAIL STYLE */
+.detailsContainer {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 5%;
+	width: 90%;
+	text-align: center;
+}
+
+.selectedItem img {
+	width: 300px;
+	height: 300px;
+
+}
+
+#addBtn {
+	margin-top: 20px;
+}
+
+
