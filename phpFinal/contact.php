@@ -6,7 +6,7 @@
 <div id="container">
    <h1>Contact Form</h1>
 	<main class="contact">
-		<form id="contactForm" action="contact.php" method="GET">	
+		<form id="contactForm" action="contact.php" method="POST">	
 		  <!-- name -->
 		  <div class="nameArea">
 		    <label for="firstname"><span>*</span>First Name:</label>

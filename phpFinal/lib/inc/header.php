@@ -1,4 +1,14 @@
-<?php require("./lib/inc/connection.php"); ?>
+<?php 
+	session_start(); //  creates a session / resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
+	require("./lib/inc/connection.php"); 
+
+	if (isset($_GET['purchaseNumber'])) { // if get variable is set, then store it in array
+		$purchaseNumber = $_GET['purchaseNumber'];
+		$_SESSION['cart'][] = $purchaseNumber;
+
+	} 
+ 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +38,12 @@
 	  </nav>
 	  <div id="cartIcon">
 	  	<p>&#x1f6d2;</p>
-	  	<div id="cartQuantity">0</div>
+	  	<div id="cartQuantity">
+	  		<?php foreach($_SESSION['cart'] as $value): ?>
+	  			<?= $value; ?>
+				<?php endforeach; ?>
+	  	</div>
+	  	
 	  </div>
 	</header>
 

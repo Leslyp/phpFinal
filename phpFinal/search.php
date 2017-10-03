@@ -4,7 +4,7 @@
 	$descrip = $_GET['searchDescrip'];
 	$price = $_GET['filterPrice'];
 	
-	 	if (isset($_GET['submit']) && !empty($category) || !empty($name) || !empty($descrip)) {
+	 	if (isset($_GET['submit']) && !empty($category) && !empty($name)) {
     	try {
 		    $query = "";
 		    $isEmpty = false;
@@ -43,15 +43,16 @@
 	<div>
 		<label for="filterPrice">Select Price:</label>
 		<select name="filterPrice">
-			<option>$8 - $16</option>
-			<option>$20 - $25</option>
-			<option>$30 - $40</option>
+			<option value="low">$8 - $16</option>
+			<option value="medium">$20 - $25</option>
+			<option value="high">$30 - $40</option>
 		</select>
 	</div>
 		<input type="submit" name="submit" value="Submit">
 	</div>
 </form>
 <div class="new">
+
 	<?php foreach($products as $product): ?>
 		<figure class="figures">
 			<a href='productDetails.php?productId=<?= $product['productId'] ?>'><img src= '.<?= $product['image'] ?>' alt="product pic">	</a>

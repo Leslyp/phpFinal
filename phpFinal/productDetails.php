@@ -1,5 +1,9 @@
-<?php include("./lib/inc/header.php"); 
+<?php
+	//session_start(); // you are telling PHP that you want to use the session
+	include("./lib/inc/header.php");
 	$productId = $_GET['productId'];
+	
+
 		try {
 	    // using prepare(protects from SQL injections) to build select statement so it can occur multiple times
 	    $sth = $conn->prepare("SELECT * FROM PetProducts WHERE productId = '{$productId}'");
@@ -11,6 +15,7 @@
 		   echo "Connection failed: " . $e->getMessage();
 	}
 
+	
 ?>
 
 <header>
@@ -27,14 +32,21 @@
 					<p>Price: $<?= $product['price'] ?></p>
 				</figcaption>
 			</figure>
-			<button type="text" id="addBtn" onClick="addItemToCart()">push me</button> 
+			<!-- <button type="text" id="addBtn" onClick="addItemToCart()">push me</button>  -->
 
-			<form id="purchaseItem"  onSubmit="return addItemToCart()" action="#" method="GET">
+			<form id="purchaseItem" action="products.php" method="GET">
 				<label for="purchaseNumber">Number of products you want to purchase:</label>
-				<input type="text" name="purchaseNumber" id="purchaseNumber">
-
-<!-- 				<button type="submit" id="addBtn" onClick="addItemToCart()">Add to Cart</button> 
- -->			</form>
+				<select name="purchaseNumber" id="purchaseNumber">
+					<option name="purchaseNumber" value="1">1</option>
+					<option name="purchaseNumber" value="2">2</option>
+					<option name="purchaseNumber" value="3">3</option>
+					<option name="purchaseNumber" value="4">4</option>
+					<option name="purchaseNumber" value="5">5</option>
+				</select> 
+				<div>
+					<input type="button" onClick="addItemToCart()" id="addBtn" value="Add to Cart"> 
+				</div>
+			</form>
     <?php endforeach; ?>
   </div>	 	
 <?php include("./lib/inc/footer.php"); ?>

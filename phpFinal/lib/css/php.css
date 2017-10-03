@@ -240,3 +240,6 @@ ul.nav-bar {
 }
 
 
+/*	  	<div id="cartQuantity"><?php print_r($_SESSION["cart"][2]); ?></div>
+*/
+

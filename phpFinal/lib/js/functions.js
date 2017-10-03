@@ -10,21 +10,29 @@ function toggleMobileDropdown() {
 } 
 
 // function to add an item to the cart
-function addItemToCart() {
-    var addBtn = document.getElementById("addBtn"); 
-    var cartQuantity = document.getElementById("cartQuantity").innerHTML; 
-    var inputQuantity = document.getElementById("purchaseNumber").innerHTML; 
-    
-    cartQuantity = parseInt(cartQuantity);
-   	inputQuantity = parseInt(inputQuantity); 
-    console.log("before: ",cartQuantity);
-    console.log("before: ",inputQuantity);
+function addItemToCart(event) {
+		 //event.preventDefault();
+		 alert("Added item(s) to cart");
+		 document.getElementById("purchaseItem").submit(); 
 
-    if (addBtn) {  // when btn is pushed
-     	cartQuantity = cartQuantity + 1;  // add input to overall quantity
-      console.log("after: ",cartQuantity);
-		}
-		document.getElementById("cartQuantity").innerHTML = cartQuantity; // update overall quantity
+		// console.log("got into addItemToCart", event);
+
+  //   var addBtn = document.getElementById("addBtn"); 
+  //   var cartQuantity = document.getElementById("cartQuantity").innerHTML;
+  //   console.log("test1: ",cartQuantity); 
+  //   var inputQuantity = document.getElementById("purchaseNumber").innerHTML; 
+  //   console.log("test2: ",inputQuantity); 
+
+  //   cartQuantity = parseInt(cartQuantity);
+  //  	inputQuantity = parseInt(inputQuantity); 
+  //   console.log("before: ",cartQuantity);
+  //   console.log("before: ",inputQuantity);
+
+  //   if (addBtn) {  // when btn is pushed
+  //    	cartQuantity = cartQuantity + inputQuantity;  // add input to overall quantity
+  //     console.log("after: ",cartQuantity);
+		// }
+		// document.getElementById("cartQuantity").innerHTML = cartQuantity; // update overall quantity
+	
 
 } 
-console.log("hi");
