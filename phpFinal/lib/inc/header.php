@@ -4,9 +4,11 @@
 
 	if (isset($_GET['purchaseNumber'])) { // if get variable is set, then store it in array
 		$purchaseNumber = $_GET['purchaseNumber'];
+		$sum = 0;
 		$_SESSION['cart'][] = $purchaseNumber;
-
-	} 
+	} else {
+		$_SESSION['cart'][] = 0;
+	}
  
 ?>
 
@@ -27,10 +29,10 @@
 	   	 <!-- id is used for dropdown class in media query -->
 	   	<ul id="myNavBar" class="nav-bar">
 	   		<li id="logo"><a href="index.php">The Dog Shop</a></li>
-	      <li><a href="index.php">Home</a></li>
-	      <li><a href="products.php">Products</a></li>
-	      <li><a href="search.php">Search</a></li>
-	      <li><a href="contact.php">Contact</a></li> 
+	      <li><a href="index.php" class="<?php if ($section == "home") {echo "selected";} ?>">Home</a></li>
+	      <li><a href="products.php" class="<?php if ($section == "products") {echo "selected";} ?>">Products</a></li>
+	      <li><a href="search.php" class="<?php if ($section == "search") {echo "selected";} ?>">Search</a></li>
+	      <li><a href="contact.php" class="<?php if ($section == "contact") {echo "selected";} ?>">Contact</a></li> 
 	      <!-- "trigram for heaven" - hamburger icon -->
 	      <!-- onClick calls js function when clicked, shows/ hides dropdown  -->
 	      <li class="home-icon"><a href="#" onClick="toggleMobileDropdown()">&#9776;</a></li> 
@@ -39,9 +41,10 @@
 	  <div id="cartIcon">
 	  	<p>&#x1f6d2;</p>
 	  	<div id="cartQuantity">
-	  		<?php foreach($_SESSION['cart'] as $value): ?>
-	  			<?= $value; ?>
+	  		<?php foreach($_SESSION["cart"] as $value): ?>
+					<?php $sum += $value; ?>
 				<?php endforeach; ?>
+				<p><?= $sum ?> <?= ($sum > 1 ? 'Items' : 'Item') ?></p>
 	  	</div>
 	  	
 	  </div>

@@ -1,3 +1,4 @@
+<?php	$section = "home"; ?>
 <?php include("./lib/inc/header.php"); ?>
 
 

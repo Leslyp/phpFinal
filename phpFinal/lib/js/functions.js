@@ -10,29 +10,30 @@ function toggleMobileDropdown() {
 } 
 
 // function to add an item to the cart
-function addItemToCart(event) {
-		 //event.preventDefault();
+function addItemToCart() {
 		 alert("Added item(s) to cart");
 		 document.getElementById("purchaseItem").submit(); 
-
-		// console.log("got into addItemToCart", event);
-
-  //   var addBtn = document.getElementById("addBtn"); 
-  //   var cartQuantity = document.getElementById("cartQuantity").innerHTML;
-  //   console.log("test1: ",cartQuantity); 
-  //   var inputQuantity = document.getElementById("purchaseNumber").innerHTML; 
-  //   console.log("test2: ",inputQuantity); 
-
-  //   cartQuantity = parseInt(cartQuantity);
-  //  	inputQuantity = parseInt(inputQuantity); 
-  //   console.log("before: ",cartQuantity);
-  //   console.log("before: ",inputQuantity);
-
-  //   if (addBtn) {  // when btn is pushed
-  //    	cartQuantity = cartQuantity + inputQuantity;  // add input to overall quantity
-  //     console.log("after: ",cartQuantity);
-		// }
-		// document.getElementById("cartQuantity").innerHTML = cartQuantity; // update overall quantity
-	
-
 } 
+
+// function to slide form up on submit
+// function hideForm(event) {
+// 		event.preventDefault();
+// 		$( "#submit" ).click(function() {
+// 	  $( "#contactForm" ).slideUp( "slow", function() {
+// 	    // Animation complete.
+// 	  });
+// }
+
+// function reactToComment() {
+//   var addLikeBtn = document.getElementById("addLikeBtn"); 
+//   var addDislikeBtn = document.getElementById("addDislikeBtn").innerHTML;
+
+//   addLikeBtn = parseInt(addLikeBtn);
+//  	addDislikeBtn = parseInt(addDislikeBtn); 
+
+//   if (addLikeBtn) {  // when btn is pushed
+//    	addLikeBtn = addLikeBtn + 1;  // add input to overall quantity
+// 	}
+// 	document.getElementById("addLikeBtn").innerHTML = addLikeBtn; // update overall quantity
+// }
+

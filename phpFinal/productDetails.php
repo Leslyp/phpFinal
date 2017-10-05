@@ -1,18 +1,19 @@
 <?php
-	//session_start(); // you are telling PHP that you want to use the session
+	session_start(); // you are telling PHP that you want to use the session
+	$section = "product details"; 
 	include("./lib/inc/header.php");
 	$productId = $_GET['productId'];
 	
 
-		try {
-	    // using prepare(protects from SQL injections) to build select statement so it can occur multiple times
-	    $sth = $conn->prepare("SELECT * FROM PetProducts WHERE productId = '{$productId}'");
-	    // execute runs prepared statement, but doesn't actually return data
-	    $sth->execute();
-	    // fetch returns the data
-	    $products = $sth->fetchAll(PDO::FETCH_ASSOC);
-		} catch(PDOException $e) {  // catches exceptions (unsuccessful)
-		   echo "Connection failed: " . $e->getMessage();
+	try {
+    // using prepare(protects from SQL injections) to build select statement so it can occur multiple times
+    $sth = $conn->prepare("SELECT * FROM PetProducts WHERE productId = '{$productId}'");
+    // execute runs prepared statement, but doesn't actually return data
+    $sth->execute();
+    // fetch returns the data
+    $products = $sth->fetchAll(PDO::FETCH_ASSOC);
+	} catch(PDOException $e) {  // catches exceptions (unsuccessful)
+	   echo "Connection failed: " . $e->getMessage();
 	}
 
 	

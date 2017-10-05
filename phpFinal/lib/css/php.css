@@ -40,7 +40,7 @@ ul.nav-bar {
 .nav-bar li a {
   float: left;
   display: inline-block;
-  padding: 15px 100px;
+  padding: 15px 101px;
   text-decoration: none;
   color: white;
   /* make each of the links have the same height, so logo and hamburger icon don't mess up hover */
@@ -61,6 +61,10 @@ ul.nav-bar {
 /* doesn't show hamburger icon on desktop */
 .nav-bar .home-icon {
   display: none;
+}
+
+.selected {
+  background-color: #5C135F;
 }
 
 @media screen and (max-width: 800px) {  /* for mobile view */
@@ -240,6 +244,14 @@ ul.nav-bar {
 }
 
 
-/*	  	<div id="cartQuantity"><?php print_r($_SESSION["cart"][2]); ?></div>
-*/
+/* START Search STYLE */
+#searchItemForm {
+	margin: 20px;
+}
+
+#searchItemForm div{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
 

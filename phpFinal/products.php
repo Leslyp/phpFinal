@@ -1,7 +1,7 @@
+<?php	$section = "products"; ?>
 <?php 
 	include("./lib/inc/header.php");
 	$search = $_GET['search'];
-
 	try {
     // use distinct to eliminate repeated values
     $sth = $conn->prepare("SELECT DISTINCT category FROM PetProducts");

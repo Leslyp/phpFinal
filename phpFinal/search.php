@@ -1,35 +1,62 @@
-<?php include("./lib/inc/header.php"); 
+<?php 
+	$section = "search";
+	include("./lib/inc/header.php");
 	$category = $_GET['searchCategory'];
 	$name = $_GET['searchName'];
-	$descrip = $_GET['searchDescrip'];
+	$description = $_GET['searchDescrip'];
 	$price = $_GET['filterPrice'];
 	
-	 	if (isset($_GET['submit']) && !empty($category) && !empty($name)) {
-    	try {
-		    $query = "";
-		    $isEmpty = false;
-		    $query = "SELECT * FROM PetProducts WHERE category = '{$category}' AND name = '{$name}'";
-		    // using prepare(protects from SQL injections) to build select statement so it can occur multiple times
-		    $sth = $conn->prepare($query);
-		    // execute runs prepared statement, but doesn't actually return data
-		    $sth->execute();
-		    // fetch returns the data
-		    $products = $sth->fetchAll(PDO::FETCH_ASSOC);
-			} catch(PDOException $e) {  // catches exceptions (unsuccessful)
-			   echo "Connection failed: " . $e->getMessage();
-			}
-    } else{  //show PetProducts that match the user input
-    	$isEmpty = true;
-    }
+	try {
+		$sth = $conn->prepare("SELECT DISTINCT category FROM PetProducts");
+    $sth->execute();
+    $categories = $sth->fetchAll(PDO::FETCH_ASSOC);   
+	} catch(PDOException $e) {  // catches exceptions (unsuccessful)
+	   echo "Connection failed: " . $e->getMessage();
+	}
+	
+ 	if (isset($_GET['submit']) && !empty($category) && !empty($name)) {
+  	try {
+	    $query = "";
+	   	$isEmpty = false;
+
+	   	//checks for products with low price range
+	   	if ($price == "low") {
+	   		$query = "SELECT * FROM PetProducts WHERE category = '{$category}' AND name LIKE '%{$name}%' AND description LIKE '%{$description}%' AND price BETWEEN 8 AND 16";
+	   	} elseif ($price == "medium") { //checks for products with medium price range
+	   		$query = "SELECT * FROM PetProducts WHERE category = '{$category}' AND name LIKE '%{$name}%' AND description LIKE '%{$description}%' AND price BETWEEN 20 AND 25";
+	   	} elseif ($price == "high") { //checks for products with high price range
+	   		$query = "SELECT * FROM PetProducts WHERE category = '{$category}' AND name LIKE '%{$name}%' AND description LIKE '%{$description}%' AND price BETWEEN 30 AND 40";
+	   	}
+
+	    
+	    // using prepare(protects from SQL injections) to build select statement so it can occur multiple times
+	    $sth = $conn->prepare($query);
+	    // execute runs prepared statement, but doesn't actually return data
+	    $sth->execute();
+	    // fetch returns the data
+	    $products = $sth->fetchAll(PDO::FETCH_ASSOC);
+		} catch(PDOException $e) {  // catches exceptions (unsuccessful)
+		   echo "Connection failed: " . $e->getMessage();
+		}
+  } else{  //show PetProducts that match the user input
+  	$isEmpty = true;
+  }
 
 ?>
 
 <h1>Search For Item</h1>
-<?= ($isEmpty == true ?'*Please fill in all fields' : '') ?>
 <form id="searchItemForm" action="search.php" method="GET">
 	<div>
-		<label for="searchCategory">Search Category: </label>
-		<input type="text" id="searchCategory" name="searchCategory">
+		<label for="search">Search Category</label>
+		<!-- create select dropdown with mysql data -->
+		<select id='searchCategory' name='searchCategory'>
+			<?php foreach($categories as $category): ?>
+				<!-- add selected to option to show it in dropdown -->
+				<option <?= ($category == $category['category'] ?'selected' : '') ?> value='<?= $category['category'] ?>'>
+				<?= $category['category'] ?>
+				</option>
+			<?php endforeach; ?>
+		</select>
 	</div>
 	<div>
 		<label for="searchName">Search Name: </label>
