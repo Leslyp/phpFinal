@@ -3,9 +3,8 @@
 	$section = "search";
 	include("./lib/inc/header.php");
 
-	$price = $_GET['filterPrice'];
-
-	$term = $_GET['searchTerm'];
+	$price = !empty($_GET['filterPrice']) ? $_GET['filterPrice'] : '';
+	$term = !empty($_GET['searchTerm']) ? $_GET['searchTerm'] : '';
 
 	// fetch all categories to form select dropdown
 	$categories = PetProducts::get_all_categories();
@@ -30,13 +29,12 @@
 
 ?>
 
-
 <main>
 	<h1>Search For Item</h1>
 	<form id="searchItemForm" action="search.php" method="GET">
 		<div>
 			<label for="searchTerm">&#128269; </label>
-			<input type="text" id="searchTerm" name="searchTerm" placeholder="Search For Product..." value="<?php echo htmlspecialchars($_GET['searchTerm']); ?>">
+			<input type="text" id="searchTerm" name="searchTerm" placeholder="Search For Product..." value="<?php echo htmlspecialchars($term); ?>">
 		</div>
 		<div>
 			<label for="filterPrice"></label>
@@ -51,7 +49,6 @@
 			<button type="submit" name="submit" value="Submit">Submit</button> 
 		</div>
 	</form>
-
 	<div class="new">
 		<!-- use if statement to show products if there are any -->
 		<?php if (isset($_GET['submit']) && !empty($products)): ?>

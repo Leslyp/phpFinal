@@ -21,7 +21,7 @@
 				</figcaption>
 			</figure>
 			<!-- form to let user select quantity of items they want -->
-			<form id="purchaseItem" action="products.php" method="GET">
+			<form id="purchaseItem" action="products_post.php" method="POST">
 				<label for="purchaseNumber">Number of products you want to purchase:</label>
 				<select name="purchaseNumber" id="purchaseNumber">
 					<option name="purchaseNumber" value="1">1</option>

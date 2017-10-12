@@ -1,16 +1,13 @@
 <?php 
 	session_start(); //  creates a session / resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
-	
+	 error_reporting(E_ALL);
+	 ini_set('display_errors', 1);
 	// Bootstrap files handle all the dynamic requests coming to a server / loads project enviroment
 	require("./lib/inc/bootstrap.php"); 
 
-	// if get variable is set, then store it in array
-	if (isset($_GET['purchaseNumber'])) { 
-		$purchaseNumber = $_GET['purchaseNumber'];
-		$sum = 0;
-		$_SESSION['cart'][] = $purchaseNumber;
-	} 
- 
+	// set the default timezone to use. Available since PHP 5.1
+	date_default_timezone_set('UTC');
+  $sum = 0;
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +45,7 @@
 	      <li class="home-icon"><a href="#" onClick="toggleMobileDropdown()">&#9776;</a></li> 
 	  	</ul>
 	  </nav>
-
-	   <div id="cartIcon">
+	  <div id="cartIcon">
 	  	<div id="cartQuantity">
 	  		<?php foreach($_SESSION["cart"] as $value): ?>
 	  			<!-- sum is constantly updated with the new value user selects from quantity -->
@@ -58,11 +54,4 @@
 				<p><span id="cartText"><?= $sum ?> <?= ($sum > 1 || $sum == 0 ? 'Items' : 'Item') ?> &#x1f6d2;</span></p>
 	  	</div>
 	  </div>
-
-	 
-
-	 
 	</header>
-
-
-

@@ -2,7 +2,9 @@
 	// section variable lets us find which page is selected to show that it's selected on nav
   $section = "products";
 	include("./lib/inc/header.php");
-	$search = $_GET['search'];
+
+	// add to all variables to get rid of undefined index error
+	$search = !empty($_GET['search']) ? $_GET['search'] : '';
 
 	// calling method in pet products class to return results
 	$categories = PetProducts::get_all_categories();
@@ -31,13 +33,11 @@
 					</option>
 				<?php endforeach; ?>
 			</select>
-
 			<div class="submitBtn">
 				<button type='submit'>Submit</button>
 			</div>
 		</form>
 	</div>
-
   <div class="new">
 		<?php foreach($products as $product): ?>
 			<figure class="figures">

@@ -17,7 +17,6 @@
 	} 
 
 ?>
-
 	
 <main id="container">
    <h1>Comments / Reviews</h1>
@@ -29,7 +28,6 @@
 				<p>Comment: <?= htmlentities($contact['comment']) ?></p>
 			<?php endforeach; ?>
 		</section>
-
 		<div>
 			<a href="contact.php"><button>Post another comment</button></a>
 		</div>
