@@ -4,27 +4,35 @@ html, body, nav {
   /* becomes the parent element */
   position: relative; 
   width: 100%; 
+  font-size: 20px;
 }
 
-.footerContainer {
-	height: 5%;
-	margin: 20px;
-	color: #A38CA4;
-	text-align: center;
+main {
+  margin-bottom: 10%;
 }
 
-.footerContainer .links img{
-	width: 6%;
-	height: 6%;
-	padding-right: 10%;
-	padding-left: 10%;
-}
-
+/* STYLE HEADERS */
 h1 {
  color: #5C135F;
  text-align: center;
  text-shadow: 2px 2px 1px grey;
 }
+
+/* style all buttons */
+button { 
+  margin: 10px;
+  border-radius: 6px;
+  background-color: #A38CA4;
+  color: white;
+  transition-duration: .3s;
+}
+
+button:hover {
+  background-color:  #660066;
+}
+
+
+/************** STYLE HEADER ***************/
 
 ul.nav-bar {  
   list-style-type: none;
@@ -40,7 +48,7 @@ ul.nav-bar {
 .nav-bar li a {
   float: left;
   display: inline-block;
-  padding: 15px 101px;
+  padding: 15px 110px;
   text-decoration: none;
   color: white;
   /* make each of the links have the same height, so logo and hamburger icon don't mess up hover */
@@ -58,6 +66,12 @@ ul.nav-bar {
   font-family: 'Chewy', cursive;
   font-size: 20px;
 }
+
+/* don't change hover color on logo */
+#logo a:hover {
+  background-color: #A38CA4;
+}
+
 /* doesn't show hamburger icon on desktop */
 .nav-bar .home-icon {
   display: none;
@@ -67,7 +81,70 @@ ul.nav-bar {
   background-color: #5C135F;
 }
 
-@media screen and (max-width: 800px) {  /* for mobile view */
+/* change cart quantity text color*/
+#cartText {
+  color: #5C135F;
+  font-size: 22px;
+}
+
+#cartIcon {
+  margin: 2% 5%;
+  text-align: right;
+}
+
+/*************** STYLE INDEX PAGE ***************/
+
+/* make dots larger */
+div.fotorama__dot {
+  width: 8px;
+  height: 8px;
+}
+
+/* style dot when active */
+.fotorama__nav__frame.fotorama__active div.fotorama__dot {
+  width: 10px;
+  height: 10px;
+  background-color: purple;
+  border: none;
+}
+
+div.fotorama__img{
+  width: 400px;
+  height: 10px;
+}
+.containHome {
+  position: relative;
+  height: 50%;
+  /* flex ensures that elements accommendate different screen sizes/ display */
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 5%;
+}
+
+.containFeatured {
+  border-top: 4px solid #A38CA4; 
+  border-left: 2px solid #A38CA4;
+  width: 47%;
+  margin: 1.5%;
+  box-shadow: 5px 5px 1px #A38CA4;
+}
+
+.new h2 {
+  color: #660066;
+  text-shadow: 2px 2px 2px grey;
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.new .homeBox {
+  xbackground-color: blue;
+  width: 100%;
+  height: 40%;
+}
+
+@media screen and (max-width: 799px)  {  /* for mobile view */
 	/* remove hover color on hamburger icon */
 	.nav-bar .home-icon a:hover {
 	  background-color: transparent;
@@ -82,11 +159,6 @@ ul.nav-bar {
    displays each link on a seperate line  */
   .nav-bar li a {
     display: block;
-  }
-  
-  /* only show name by default on mobile*/
-  .nav-bar li:not(:first-child) {
-    display: none;
   }
   
   /* show home icon and display on same line as name
@@ -104,28 +176,33 @@ ul.nav-bar {
     top: 0;
   } 
   
-  /* used when dropdown is shown */
-  .nav-bar.dropdown li {
+  /* used when dropdown is shown, 
+  li are shown as block */
+  .nav-bar.dropdown li, .nav-bar.dropdown li a {
     display: block;
     float: none;
   }
   
-  /* li are shown as block*/
-  .nav-bar.dropdown li a {
-    display: block;
-    float: none;
-  }
-
-  /* make footer icons bigger when page is smaller*/
+  /* make footer icons bigger when page is smaller */
   .footerContainer .links img{
 		width: 10%;
 		height: 10%;
-		padding-right: 10%;
-		padding-left: 10%;
 	}
+
+  /*************** STYLE FOOTER ***************/
+
+  .footerContainer .links a img{
+    width: 10%;
+    height: 10%;
+    padding: 4%;
+  }
+  /* make footer text smaller when view is smaller */
+  #footerText {
+    font-size: 16px;
+  }
 }
 
-@media screen and (max-width: 1210px) {  /* for mobile view */
+@media screen and (max-width: 1210px) {  
   /* removing float left on mobile */
   .nav-bar li {
     float: none;
@@ -170,14 +247,12 @@ ul.nav-bar {
   }
 }
 
-/* END media query STYLES */
 
-/* START PRODUCTS STYLE */
+/*************** START PRODUCTS STYLE ***************/
 .new {
 	height: 100%;
 	position: relative;
 	margin: 0 auto;
-	padding: 5%;
 	width: 90%;
 	text-align: center;
 }
@@ -185,7 +260,6 @@ ul.nav-bar {
 .new img {
 	width: 80%;
 	height: 80%;
-
 }
 
 .figures {
@@ -194,11 +268,15 @@ ul.nav-bar {
  	padding: 10px;
  	display: inline-block;
 }
+/* target p to make them all the same height */
+.figures p {
+  height: 60px;
+}
 
 .productName {
-	color: #5C135F;
+	color: #D18F8A;
 	font-weight: 600;
-	font: 14px;
+	font-size: 24px;
 }
 
 .figures img:hover {
@@ -207,23 +285,18 @@ ul.nav-bar {
 	border-left: 1px solid lavender;
 }
 
-.viewBtn {
-	display: inline-block;
-	width: 100px;
-	height: 30px;
-}
-
-.formContainer, #cartIcon {
+.formContainer {
 	text-align: right;
 	margin: 20px;
 }
 
-.submitBtn { 
-	display: inline-block;
+#searchForm{
+  margin: 3%;
+  text-align: right;
 }
-/* END Product STYLES */
 
-/* START PRODUCT DETAIL STYLE */
+
+/*************** START PRODUCT DETAIL STYLE ***************/
 .detailsContainer {
 	height: 100%;
 	position: relative;
@@ -239,19 +312,62 @@ ul.nav-bar {
 
 }
 
-#addBtn {
-	margin-top: 20px;
-}
-
-
-/* START Search STYLE */
-#searchItemForm {
-	margin: 20px;
-}
-
+/*************** START Search STYLE ***************/
 #searchItemForm div{
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 3%;
+  text-align: center;
 }
 
+/*************** START CONTACT STYLE ***************/
+#container {
+  text-align: center;
+  border: 2px solid purple;
+  margin: 5% 15%;
+  background-color: #e8e3e8;
+}
 
+#contactForm div {
+  text-align: center;
+  margin: 3%;
+
+}
+
+#contactForm label {
+  display: block;
+}
+
+#textarea textarea{
+  width: 40%;
+}
+
+#contactMessage{
+  color: #705c70;
+}
+/* style jquery validation errors */
+form .error {
+  color: #ff0000;
+}
+
+/*************** STYLE FOOTER ***************/
+
+.footerContainer {
+  height: 10%;
+  color: #A38CA4;
+  text-align: center;
+}
+
+.footerContainer .links img{
+  width: 5%;
+  height: 5%;
+  padding: 4%;
+  transition-duration: .3s;
+}
+
+#footerText {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.footerContainer .links a img:hover{
+  width: 6%;
+}
