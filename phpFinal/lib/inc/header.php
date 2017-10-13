@@ -1,5 +1,7 @@
 <?php 
 	session_start(); //  creates a session / resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
+
+	$_SESSION['cart'] = [];
 	
 	// Bootstrap files handle all the dynamic requests coming to a server / loads project enviroment
 	require("./lib/inc/bootstrap.php"); 
