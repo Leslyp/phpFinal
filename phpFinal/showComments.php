@@ -29,7 +29,7 @@
 			<?php endforeach; ?>
 		</section>
 		<div>
-			<button>
+			<button id="commentRedirect">
 				<a href="contact.php">Post another comment</a>
 			</button>
 		</div>

@@ -32,6 +32,15 @@ button:hover {
   background-color: #660066;
 }
 
+/* fix styles on comment button since it's a link */
+button#commentRedirect {
+  color: white;
+}
+
+button#commentRedirect a{
+  text-decoration: none;
+}
+
 /************** STYLE HEADER ***************/
 ul.nav-bar {  
   list-style-type: none;
