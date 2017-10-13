@@ -13,13 +13,14 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<title>PHP Final Project</title>
 		<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="lib/css/php.css?v=<?php echo time(); ?>">
 
 		<!-- jquery validation plugin -->
 		<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-		<script src="lib/js/form-validation.js?v=<?php echo time(); ?>""></script>
+		<script src="lib/js/form-validation.js?v=<?php echo time(); ?>"></script>
 
 		<script src="lib/js/functions.js?v=<?php echo time(); ?>"></script>
 

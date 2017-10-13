@@ -33,7 +33,7 @@
 		  <!-- comments/questions-->
 	   	<div id="textarea">
 		    <label for="comments"><span>*</span>Comments/Questions:</label>
-		    <textarea rows="6" cols="40" id="comments" name="comments" value=""></textarea>
+		    <textarea rows="6" cols="40" id="comments" name="comments"></textarea>
 	   	</div>
 		  <!-- save button-->
 	   	<div class="submitBtn">

@@ -37,8 +37,8 @@
 			<input type="text" id="searchTerm" name="searchTerm" placeholder="Search For Product..." value="<?php echo htmlspecialchars($term); ?>">
 		</div>
 		<div>
-			<label for="filterPrice"></label>
-			<select  name="filterPrice" value="">
+			<label for="filterPrice">Select Price</label>
+			<select  name="filterPrice">
 				<option <?= ($price == "all" ?'selected' : '') ?> value="all">Browse All Prices</option>
 				<option <?= ($price == "low" ?'selected' : '') ?> value="low">$8 - $16</option>
 				<option <?= ($price == "medium" ?'selected' : '') ?> value="medium">$20 - $25</option>

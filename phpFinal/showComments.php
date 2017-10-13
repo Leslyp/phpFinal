@@ -29,7 +29,9 @@
 			<?php endforeach; ?>
 		</section>
 		<div>
-			<a href="contact.php"><button>Post another comment</button></a>
+			<button>
+				<a href="contact.php">Post another comment</a>
+			</button>
 		</div>
 </main>
 

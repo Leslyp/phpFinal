@@ -163,13 +163,6 @@ div.fotorama__dot {
  	display: inline-block;
 }
 
-/* make whole img white bg on index page,
-so when hovered there is no odd color space */
-div.figuresIndex {
-  background-color: white;
-  padding: 10px;
-}
-
 /* target p to make them all the same height */
 .figures p {
   height: 60px;

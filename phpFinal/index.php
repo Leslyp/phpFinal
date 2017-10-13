@@ -18,13 +18,10 @@
         <h1>Featured Items</h1>
         <?php foreach ($featuredItems as $item): ?>
           <figure class="figures">
-            <div class="figuresIndex">
-              <a href='productDetails.php?productId=<?= $item['productId'] ?>'>
-                <img src= '.<?= $item['image'] ?>' alt="featured product pic">
-              </a>
-              <figcaption><?= $item['name'] ?></figcaption>
-            </div>
-
+            <a href='productDetails.php?productId=<?= $item['productId'] ?>'>
+              <img src= '.<?= $item['image'] ?>' alt="featured product pic">
+            </a>
+            <figcaption><?= $item['name'] ?></figcaption>
           </figure>
         <?php endforeach; ?>
       </div>
