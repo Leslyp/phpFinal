@@ -12,7 +12,6 @@
 				":comment" => $comment,
 			);
 			return $db->fetch_all("INSERT INTO Contacts (contactId, fname, lname, email, phone, comment) VALUES (NULL, :fname, :lname, :email, :phone, :comment)", $boundParameters);
-			 
 		}
 
 		public static function get_all_comments() {

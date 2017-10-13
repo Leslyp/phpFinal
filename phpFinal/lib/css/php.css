@@ -5,17 +5,17 @@ html, body, nav {
   position: relative; 
   width: 100%; 
   font-size: 20px;
+  font-family: Sans-Serif;
 }
 
 main {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 /* STYLE HEADERS */
 h1 {
  color: #5C135F;
  text-align: center;
- text-shadow: 2px 2px 1px grey;
 }
 
 /* style all buttons */
@@ -24,16 +24,15 @@ button {
   border-radius: 6px;
   background-color: #A38CA4;
   color: white;
+  /* tell animation how long to wait */
   transition-duration: .3s;
 }
 
 button:hover {
-  background-color:  #660066;
+  background-color: #660066;
 }
 
-
 /************** STYLE HEADER ***************/
-
 ul.nav-bar {  
   list-style-type: none;
   background-color: #A38CA4;
@@ -48,23 +47,23 @@ ul.nav-bar {
 .nav-bar li a {
   float: left;
   display: inline-block;
-  padding: 15px 110px;
+  padding: 1% 5%;
   text-decoration: none;
   color: white;
   /* make each of the links have the same height, so logo and hamburger icon don't mess up hover */
-  height: 25px;
+  height: 24px;
 }
 
 .nav-bar li a:hover {
   background-color: #E3D1ED;
 }
 
-/* style for my logo in nav bar */
+/* style logo in nav bar */
 #logo {
   color: #FFFFB7;
   text-shadow: 2px 2px #E3B960;
   font-family: 'Chewy', cursive;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 /* don't change hover color on logo */
@@ -75,26 +74,28 @@ ul.nav-bar {
 /* doesn't show hamburger icon on desktop */
 .nav-bar .home-icon {
   display: none;
+  margin: 2%;
 }
 
+/* style selected nav li different color */
 .selected {
   background-color: #5C135F;
 }
 
-/* change cart quantity text color*/
+/* change cart quantity text color */
 #cartText {
   color: #5C135F;
   font-size: 22px;
 }
 
 #cartIcon {
-  margin: 2% 5%;
+  margin: 2% 4%;
   text-align: right;
 }
 
 /*************** STYLE INDEX PAGE ***************/
 
-/* make dots larger */
+/* make dots larger on slider */
 div.fotorama__dot {
   width: 8px;
   height: 8px;
@@ -108,15 +109,8 @@ div.fotorama__dot {
   border: none;
 }
 
-div.fotorama__img{
-  width: 400px;
-  height: 10px;
-}
 .containHome {
-  position: relative;
-  height: 50%;
   /* flex ensures that elements accommendate different screen sizes/ display */
-  display: -webkit-flex;
   display: flex;
   margin-top: 5%;
 }
@@ -124,31 +118,167 @@ div.fotorama__img{
 .containFeatured {
   border-top: 4px solid #A38CA4; 
   border-left: 2px solid #A38CA4;
-  width: 47%;
-  margin: 1.5%;
+  width: 45%;
+  margin: 2%;
   box-shadow: 5px 5px 1px #A38CA4;
-}
-
-.new h2 {
-  color: #660066;
-  text-shadow: 2px 2px 2px grey;
-  display: block;
-  width: 75%;
-  margin: 0 auto;
-  font-size: 30px;
+  background-color:  #fff2e6;
 }
 
 .new .homeBox {
-  xbackground-color: blue;
+  background-color: white;
+  border: 2px solid purple;
   width: 100%;
-  height: 40%;
+  height: 30%;
+  margin-top: 10%;
+  margin-bottom: 8%;
+  font-size: 40px;
 }
 
-@media screen and (max-width: 799px)  {  /* for mobile view */
-	/* remove hover color on hamburger icon */
-	.nav-bar .home-icon a:hover {
-	  background-color: transparent;
-	}
+.new .homeBox {
+  transition-duration: .3s;
+}
+
+.new .homeBox:hover {
+  color: purple;
+  background-color: #e8e3e8;
+}
+
+/*************** START PRODUCTS STYLE ***************/
+.new {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+	text-align: center;
+}
+
+.new img {
+	width: 80%;
+	height: 80%;
+}
+
+.figures {
+  margin: 3%;
+ 	width: 200px;
+ 	display: inline-block;
+}
+
+/* make whole img white bg on index page,
+so when hovered there is no odd color space */
+div.figuresIndex {
+  background-color: white;
+  padding: 10px;
+}
+
+/* target p to make them all the same height */
+.figures p {
+  height: 60px;
+}
+
+.productName {
+	color: #D18F8A;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+/* outline whole figure when hovered over it,
+(RGBA) the Alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque) */
+.figures:hover {
+	box-shadow: 4px 4px 4px rgba(109, 18, 140, 0.65);
+	border-top: 1px solid rgba(109, 18, 140, 0.65);
+	border-left: 1px solid rgba(109, 18, 140, 0.65);
+}
+
+.formContainer {
+	text-align: right;
+	margin: 20px;
+}
+
+#searchForm{
+  margin: 3%;
+  text-align: right;
+}
+
+/*************** START PRODUCT DETAIL STYLE ***************/
+.detailsContainer {
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 5%;
+	width: 90%;
+	text-align: center;
+}
+
+.selectedItem img {
+	width: 300px;
+	height: 300px;
+}
+
+/*************** START Search STYLE ***************/
+#searchItemForm div{
+	margin: 3%;
+  text-align: center;
+}
+
+/*************** START CONTACT STYLE ***************/
+#container {
+  text-align: center;
+  border: 2px solid purple;
+  margin: 5% 20%;
+  background-color: #e8e3e8;
+}
+
+#contactForm div {
+  text-align: center;
+  margin: 3%;
+}
+
+#contactForm label {
+  display: block;
+}
+
+#textarea textarea{
+  width: 40%;
+}
+
+#contactMessage{
+  color: #705c70;
+}
+
+/* style jquery validation errors */
+form .error {
+  color: #ff0000;
+}
+
+/*************** STYLE FOOTER ***************/
+.footerContainer {
+  height: 10%;
+  color: #A38CA4;
+  text-align: center;
+}
+
+.footerContainer .links img{
+  width: 5%;
+  height: 3%;
+  padding: 4%;
+  transition-duration: .3s;
+}
+
+#footerText {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.footerContainer .links a img:hover{
+  width: 6%;
+}
+
+/* MEDIA QUERY - mobile view change nav to toggle */
+@media screen and (max-width: 799px) { 
+  /* remove hover color on hamburger icon */
+  .nav-bar .home-icon a:hover {
+    background-color: transparent;
+  }
 
   /* removing float left on mobile */
   .nav-bar li {
@@ -183,26 +313,92 @@ div.fotorama__img{
     float: none;
   }
   
+  /* only show name and hamburger icon by default on mobile*/
+  .nav-bar li:not(:first-child) {
+    display: none;
+  }
+
+  .nav-bar li.home-icon {
+    display: block;
+    float: right;
+  }
+
+  .nav-bar.dropdown li {
+    display: block;
+    float: none;
+  }
+
+  /* li are shown as block*/
+  .nav-bar.dropdown li a {
+    display: block;
+    float: none;
+  }
+
+  .containFeatured {
+    width: 45%;
+    margin-top: 10%;
+  }
+
+  .new .homeBox {
+    width: 100%;
+    height: 30%;
+    margin: 25% 0px;
+    font-size: 30px;
+  }
+
+  /* increase line height to fill in empty space */
+  .new .homeBox p {
+    line-height: 2em;
+  }
+
+  /* reduce margin on contact form when screen is smaller */
+  #container {
+    margin: 5% 10%;
+  }
+
   /* make footer icons bigger when page is smaller */
   .footerContainer .links img{
-		width: 10%;
-		height: 10%;
-	}
-
-  /*************** STYLE FOOTER ***************/
+    width: 10%;
+    height: 10%;
+  }
 
   .footerContainer .links a img{
     width: 10%;
     height: 10%;
     padding: 4%;
   }
+
   /* make footer text smaller when view is smaller */
   #footerText {
     font-size: 16px;
   }
 }
 
-@media screen and (max-width: 1210px) {  
+/* MEDIA QUERY - to add translate transformation when screen is wider */
+@media screen and (min-width: 1114px) {  
+  .new .homeBox {
+    transition-duration: .3s;
+  }
+
+  .new .homeBox:hover {
+    transform: translate(60px, 80px);
+  }
+
+  .nav-bar li a {
+    padding: 1% 6%;
+  }
+}
+
+/* MEDIA QUERY - to change increase L / R padding */
+@media screen and (min-width: 1350px) and (max-width: 1440px) {  
+  /* change padding to accommedate new width */
+  .nav-bar li a {
+    padding: 1% 7%;
+  }
+}
+
+/* MEDIA QUERY - to hide nav bar when screen is too big */
+@media screen and (min-width: 1441px) {  
   /* removing float left on mobile */
   .nav-bar li {
     float: none;
@@ -221,7 +417,7 @@ div.fotorama__img{
   
   /* show home icon and display on same line as logo
   when dropdown is hidden */
- .nav-bar li.home-icon {
+  .nav-bar li.home-icon {
     display: block;
     float: right;
   }
@@ -245,129 +441,4 @@ div.fotorama__img{
     display: block;
     float: none;
   }
-}
-
-
-/*************** START PRODUCTS STYLE ***************/
-.new {
-	height: 100%;
-	position: relative;
-	margin: 0 auto;
-	width: 90%;
-	text-align: center;
-}
-
-.new img {
-	width: 80%;
-	height: 80%;
-}
-
-.figures {
-  margin: 20px;
- 	width: 200px;
- 	padding: 10px;
- 	display: inline-block;
-}
-/* target p to make them all the same height */
-.figures p {
-  height: 60px;
-}
-
-.productName {
-	color: #D18F8A;
-	font-weight: 600;
-	font-size: 24px;
-}
-
-.figures img:hover {
-	box-shadow: 3px 3px 2px lavender;
-	border-top: 1px solid lavender;
-	border-left: 1px solid lavender;
-}
-
-.formContainer {
-	text-align: right;
-	margin: 20px;
-}
-
-#searchForm{
-  margin: 3%;
-  text-align: right;
-}
-
-
-/*************** START PRODUCT DETAIL STYLE ***************/
-.detailsContainer {
-	height: 100%;
-	position: relative;
-	margin: 0 auto;
-	padding: 5%;
-	width: 90%;
-	text-align: center;
-}
-
-.selectedItem img {
-	width: 300px;
-	height: 300px;
-
-}
-
-/*************** START Search STYLE ***************/
-#searchItemForm div{
-	margin: 3%;
-  text-align: center;
-}
-
-/*************** START CONTACT STYLE ***************/
-#container {
-  text-align: center;
-  border: 2px solid purple;
-  margin: 5% 15%;
-  background-color: #e8e3e8;
-}
-
-#contactForm div {
-  text-align: center;
-  margin: 3%;
-
-}
-
-#contactForm label {
-  display: block;
-}
-
-#textarea textarea{
-  width: 40%;
-}
-
-#contactMessage{
-  color: #705c70;
-}
-/* style jquery validation errors */
-form .error {
-  color: #ff0000;
-}
-
-/*************** STYLE FOOTER ***************/
-
-.footerContainer {
-  height: 10%;
-  color: #A38CA4;
-  text-align: center;
-}
-
-.footerContainer .links img{
-  width: 5%;
-  height: 5%;
-  padding: 4%;
-  transition-duration: .3s;
-}
-
-#footerText {
-  width: 50%;
-  margin-left: 25%;
-}
-
-.footerContainer .links a img:hover{
-  width: 6%;
 }

@@ -18,25 +18,28 @@
         <h1>Featured Items</h1>
         <?php foreach ($featuredItems as $item): ?>
           <figure class="figures">
-            <a href='productDetails.php?productId=<?= $item['productId'] ?>'>
-              <img src= '.<?= $item['image'] ?>' alt="featured product pic">
-            </a>
-            <figcaption><?= $item['name'] ?></figcaption>
+            <div class="figuresIndex">
+              <a href='productDetails.php?productId=<?= $item['productId'] ?>'>
+                <img src= '.<?= $item['image'] ?>' alt="featured product pic">
+              </a>
+              <figcaption><?= $item['name'] ?></figcaption>
+            </div>
+
           </figure>
         <?php endforeach; ?>
       </div>
     </div>
-    <div class="containFeatured">
+    <section class="containFeatured">
       <div class="new">
-        <h2>We are the best dog store out there</h2>
+        <h1>#1 Dog Store</h1>
           <div class="homeBox">
-            <p>Take a look at these adorable customers</p> 
+            <p>We care about our customers.</p> 
           </div>
           <div class="homeBox">
-            <p>2</p>   
+            <p>We provide wonderful service for your furry friends.</p>   
           </div>
       </div>
-    </div>
+    </section>
   </div>
 </main>
 

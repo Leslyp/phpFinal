@@ -44,7 +44,7 @@
 			$boundParameters = array(
 				":term" => '%' .$term. '%',
 			);
-	   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 8 AND 16 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
+   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 8 AND 16 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
 		}
 
  		// function to search for products in medium price range
@@ -53,7 +53,7 @@
 			$boundParameters = array(
 				":term" => '%' .$term. '%',
 			);
-	   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 20 AND 25 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
+   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 20 AND 25 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
 		}
 
 	 	// function to search for products in high price range
@@ -62,16 +62,16 @@
 			$boundParameters = array(
 				":term" => '%' .$term. '%',
 			);
-	   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 30 AND 40 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
+   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 30 AND 40 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term)", $boundParameters);
 		}
 
-			// function to search for products in all price ranges
+		// function to search for products in all price ranges
 		public static function get_products_by_search_all($term){
 			$db = new Database();
 			$boundParameters = array(
 				":term" => '%' .$term. '%',
 			);
-	   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 0 AND 40 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term) ", $boundParameters);
+   		return $db->fetch_all("SELECT * FROM PetProducts WHERE price BETWEEN 0 AND 40 AND (category LIKE :term OR name LIKE :term OR description LIKE :term OR color LIKE :term) ", $boundParameters);
 		}
 
 		// function to get featured products for slider

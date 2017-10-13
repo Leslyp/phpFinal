@@ -1,7 +1,7 @@
 		<footer class="footerContainer">
 			<div>
 				<div class="links">
-					<a href="https://www.google.com/search?q=doug+the+pug&source=lnms&tbm=isch&sa=X&ved=0ahUKEwje2JX7_-jWAhWE6CYKHSUrDnEQ_AUICygC&biw=1152&bih=661" target="blank"><img src="./lib/img/paw.png" alt="paw pic"></a>
+					<a href="https://www.google.com/search?q=doug+the+pug&source=lnms&tbm=isch&sa=X&ved=0ahUKEwje2JX7_-jWAhWE6CYKHSUrDnEQ_AUICygC&biw=1152&bih=661" target="blank"><img src="./lib/img/paw.png" alt="paw pic" ></a>
 			  	<a href="https://www.facebook.com/" target="blank"><img src="./lib/img/facebook.jpeg" alt="facebook logo"></a>
 			  	<a href="https://twitter.com/?lang=en" target="blank"><img src="./lib/img/twitter.png" alt="twitter logo"></a>
 				</div>

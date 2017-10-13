@@ -32,7 +32,7 @@
 				</select> 
 				<div class="submitBtn">
 					<!-- onclick call js function to alert user -->
-					<button type="submit" onClick="addItemToCart()" id="addBtn" value="Add to Cart">Add to Cart</button> 
+					<button type="submit" onClick="addItemToCart()" id="addBtn">Add to Cart</button> 
 				</div>
 			</form>
 	  <?php endforeach; ?>

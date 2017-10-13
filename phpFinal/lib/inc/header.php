@@ -1,7 +1,6 @@
 <?php 
 	session_start(); //  creates a session / resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
-	 error_reporting(E_ALL);
-	 ini_set('display_errors', 1);
+	
 	// Bootstrap files handle all the dynamic requests coming to a server / loads project enviroment
 	require("./lib/inc/bootstrap.php"); 
 

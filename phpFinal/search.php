@@ -54,7 +54,9 @@
 		<?php if (isset($_GET['submit']) && !empty($products)): ?>
 		<?php foreach($products as $product): ?>
 			<figure class="figures">
-				<a href='productDetails.php?productId=<?= $product['productId'] ?>'><img src= '.<?= $product['image'] ?>' alt="product pic">	</a>
+				<a href='productDetails.php?productId=<?= $product['productId'] ?>'>
+					<img src= '.<?= $product['image'] ?>' alt="product pic">
+				</a>
 				<figcaption>
 					<p class="productName"><?= $product['name'] ?></p>
 					<p><?= $product['description'] ?></p>
@@ -65,7 +67,7 @@
 		<?php endif; ?>
 		<!-- use if statement to show error message if there aren't any products -->
 		<?php if (isset($_GET['submit']) && empty($products)): ?>
-	  <p id="noResults"><?= 'No results found, please enter another term.'; ?> </p>
+	  <p id="noResults"><?= 'No results found, please enter another term.'; ?></p>
 		<?php endif; ?>
 	</div>
 </main>

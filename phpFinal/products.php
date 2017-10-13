@@ -3,7 +3,7 @@
   $section = "products";
 	include("./lib/inc/header.php");
 
-	// add to all variables to get rid of undefined index error
+	// add to all variables
 	$search = !empty($_GET['search']) ? $_GET['search'] : '';
 
 	// calling method in pet products class to return results
@@ -17,14 +17,13 @@
 
 ?>
 
-
 <main class="tableContainer">
 	<h1>Products</h1>
 	<div class="formContainer">
 		<form id="searchForm" method="GET" action="products.php">
 			<label for="search">Categories</label>
 			<!-- create select dropdown with mysql data -->
-			<select id='search' name='search' onChange=>
+			<select id='search' name='search'>
 			<option>Browse All</option>
 				<?php foreach($categories as $category): ?>
 					<!-- add selected to option to show it in dropdown -->
@@ -41,7 +40,9 @@
   <div class="new">
 		<?php foreach($products as $product): ?>
 			<figure class="figures">
-				<a href='productDetails.php?productId=<?= $product['productId'] ?>'><img src= '.<?= $product['image'] ?>' alt="product pic"></a>
+				<a href='productDetails.php?productId=<?= $product['productId'] ?>'>
+					<img src= '.<?= $product['image'] ?>' alt="product pic">
+				</a>
 				<figcaption>
 					<p class="productName"><?= $product['name'] ?></p>
 					<p><?= $product['description'] ?></p>

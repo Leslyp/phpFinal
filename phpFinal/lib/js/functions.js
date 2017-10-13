@@ -15,5 +15,10 @@ function addItemToCart() {
 	document.getElementById("purchaseItem").submit(); 
 } 
 
+// function to add an item to the cart
+function selectCategory() {
+	var x = document.getElementById("search").value;
+	return x;
+}
 
 
