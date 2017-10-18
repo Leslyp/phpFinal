@@ -9,11 +9,7 @@
 		protected function get_connection(){
 			if(!isset(static::$connection)){
 				static::$connection = new PDO(
-			  	// "mysql:host=localhost;dbname=lperez_Challenges", "r2hstudent", "SbFaGzNgGIE8kfP"
-					"mysql:dbname=Challenges;host=localhost;port=8888",
-				 	"default",
-				  "eB0pBlUcnSZNpdNh"
-
+			  	"mysql:host=localhost;dbname=lperez_Challenges", "r2hstudent", "SbFaGzNgGIE8kfP"
 				);
 			} 
 			return static::$connection;
