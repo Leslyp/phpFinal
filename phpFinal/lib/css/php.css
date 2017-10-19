@@ -32,13 +32,10 @@ button:hover {
   background-color: #660066;
 }
 
-/* fix styles on comment button since it's a link */
-button#commentRedirect {
-  color: white;
-}
-
+/* fix styles on go back to contact button since it's a link */
 button#commentRedirect a{
   text-decoration: none;
+  color: white;
 }
 
 /************** STYLE HEADER ***************/
@@ -216,8 +213,8 @@ div.fotorama__dot {
 }
 
 .selectedItem img {
-  width: 300px;
-  height: 300px;
+  width: 60%;
+  height: 60%;
 }
 
 /*************** START Search STYLE ***************/
