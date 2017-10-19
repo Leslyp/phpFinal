@@ -1,13 +1,13 @@
-<?php	
+<?php 
   // section variable lets us find which page is selected to show that it's selected on nav
   $section = "home"; 
-	include("./lib/inc/header.php"); 
+  include("./lib/inc/header.php"); 
   // calling static methods from class
-	$featuredItems = PetProducts::get_featured_products();
+  $featuredItems = PetProducts::get_featured_products();
 ?>
 
 <main class="homePage">
-  <div class="fotorama" data-width="100%" data-height="50%" data-autoplay="3000" data-transition="crossfade" >
+  <div class="fotorama" data-width="100%" data-height="50%" data-autoplay="3000" data-transition="crossfade">
     <img src="./lib/img/holo.jpg" alt="dog costumes">
     <img src="./lib/img/pugAd.jpg" alt="discount code">
     <img src="./lib/img/subscribe.jpg" alt="subscribe photo">

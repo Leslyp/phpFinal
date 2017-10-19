@@ -1,6 +1,7 @@
 <?php 
 	session_start(); //  creates a session / resumes the current one based on a session identifier passed via a GET or POST request, or passed via a cookie.
 
+	// initialize cart variable so there is no undefined index error
 	$_SESSION['cart'] = !empty($_SESSION['cart']) ? $_SESSION['cart'] : [];
 	
 	// Bootstrap files handle all the dynamic requests coming to a server / loads project enviroment
@@ -14,10 +15,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Specifies the character encoding for the HTML document -->
+		<!-- UTF-8 = Character encoding for Unicode -->
 		<meta charset="utf-8">
+		<!-- keep smaller view ports from scaling the page -->
+		<meta name="viewport" content="width=device-width" />
 		<title>PHP Final Project</title>
 		<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="lib/css/php.css?v=<?php echo time(); ?>">
+		<!-- add favicon to tab -->
+		<link rel="icon" href="./lib/img/favicon.ico">
 
 		<!-- jquery validation plugin -->
 		<script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>

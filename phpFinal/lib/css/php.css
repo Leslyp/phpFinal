@@ -125,12 +125,10 @@ div.fotorama__dot {
 }
 
 .containFeatured {
-  border-top: 4px solid #A38CA4; 
-  border-left: 2px solid #A38CA4;
   width: 45%;
   margin: 2%;
-  box-shadow: 5px 5px 1px #A38CA4;
-  background-color:  #fff2e6;
+  box-shadow: 5px 5px 2px #A38CA4;
+  background-color: #fff2e6;
 }
 
 .new .homeBox {
@@ -154,46 +152,52 @@ div.fotorama__dot {
 
 /*************** START PRODUCTS STYLE ***************/
 .new {
-	height: 100%;
-	position: relative;
-	margin: 0 auto;
-	width: 90%;
-	text-align: center;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
 }
 
 .new img {
-	width: 80%;
-	height: 80%;
+  width: 80%;
+  height: 80%;
+  border-radius: 5%;
+  /* tell the width and height properties that they should include content, padding and border */
+  box-sizing: border-box;
 }
 
 .figures {
   margin: 3%;
- 	width: 200px;
- 	display: inline-block;
+  width: 200px;
+  display: inline-block;
 }
 
 /* target p to make them all the same height */
 .figures p {
-  height: 60px;
+  height: 40px;
+  line-height: 1em;
 }
 
 .productName {
-	color: #D18F8A;
-	font-weight: 600;
-	font-size: 24px;
+  color: #D18F8A;
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 2%; 
+  margin-bottom: 0;
 }
 
 /* outline whole figure when hovered over it,
 (RGBA) the Alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque) */
-.figures:hover {
-	box-shadow: 4px 4px 4px rgba(109, 18, 140, 0.65);
-	border-top: 1px solid rgba(109, 18, 140, 0.65);
-	border-left: 1px solid rgba(109, 18, 140, 0.65);
+.new img:hover {
+  box-shadow: 4px 4px 5px rgba(109, 18, 140, 0.65);
+  border-top: 1px solid rgba(109, 18, 140, 0.65);
+  border-left: 1px solid rgba(109, 18, 140, 0.65);
 }
 
 .formContainer {
-	text-align: right;
-	margin: 20px;
+  text-align: right;
+  margin: 20px;
 }
 
 #searchForm{
@@ -203,22 +207,22 @@ div.fotorama__dot {
 
 /*************** START PRODUCT DETAIL STYLE ***************/
 .detailsContainer {
-	height: 100%;
-	position: relative;
-	margin: 0 auto;
-	padding: 5%;
-	width: 90%;
-	text-align: center;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 5%;
+  width: 90%;
+  text-align: center;
 }
 
 .selectedItem img {
-	width: 300px;
-	height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 /*************** START Search STYLE ***************/
 #searchItemForm div{
-	margin: 3%;
+  margin: 3%;
   text-align: center;
 }
 
@@ -282,9 +286,10 @@ form .error {
     background-color: transparent;
   }
 
-  /* removing float left on mobile */
-  .nav-bar li {
+  /* removing float left on mobile, except on logo */
+  .nav-bar li:not(:first-child) {
     float: none;
+    text-align: right;
   }
   
   /* removing display inline-block from mobile 
@@ -336,21 +341,41 @@ form .error {
     float: none;
   }
 
+  /* change home page set up on smaller view */
+  .containHome {
+    display: block;
+    margin: 10%;
+  }
+
   .containFeatured {
-    width: 45%;
-    margin-top: 10%;
+    width: 100%;
+    margin-top: 5%;
   }
 
   .new .homeBox {
     width: 100%;
     height: 30%;
-    margin: 25% 0px;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   /* increase line height to fill in empty space */
   .new .homeBox p {
-    line-height: 2em;
+    line-height: 1.4em;
+  }
+
+  .new .homeBox {
+    transition-duration: .3s;
+  }
+
+  /* "take" animation off on smaller view */
+  .new .homeBox:hover {
+    color: black;
+    background-color: white;
+  }
+
+  .containFeatured .figures {
+    width: 42%;
+    height: 42%;
   }
 
   /* reduce margin on contact form when screen is smaller */
@@ -371,8 +396,9 @@ form .error {
   }
 
   /* make footer text smaller when view is smaller */
-  #footerText {
-    font-size: 16px;
+  .disclaimer {
+    font-size: 12px;
+    width: 95%;
   }
 }
 

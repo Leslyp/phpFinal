@@ -21,7 +21,7 @@
 	<h1>Products</h1>
 	<div class="formContainer">
 		<form id="searchForm" method="GET" action="products.php">
-			<label for="search">Categories</label>
+			<label for="search">Category</label>
 			<!-- create select dropdown with mysql data -->
 			<select id='search' name='search'>
 			<option>Browse All</option>
@@ -33,7 +33,7 @@
 				<?php endforeach; ?>
 			</select>
 			<div class="submitBtn">
-				<button type='submit'>Submit</button>
+				<button type='submit'>Search</button>
 			</div>
 		</form>
 	</div>
