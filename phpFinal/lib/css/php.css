@@ -124,7 +124,7 @@ div.fotorama__dot {
 .containFeatured {
   width: 45%;
   margin: 2%;
-  box-shadow: 5px 5px 2px #A38CA4;
+  box-shadow: 0px 6px 4px #A38CA4;
   background-color: #fff2e6;
 }
 
@@ -135,7 +135,7 @@ div.fotorama__dot {
   height: 30%;
   margin-top: 10%;
   margin-bottom: 8%;
-  font-size: 40px;
+  font-size: 36px;
 }
 
 .new .homeBox {
@@ -187,9 +187,7 @@ div.fotorama__dot {
 /* outline whole figure when hovered over it,
 (RGBA) the Alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque) */
 .new img:hover {
-  box-shadow: 4px 4px 5px rgba(109, 18, 140, 0.65);
-  border-top: 1px solid rgba(109, 18, 140, 0.65);
-  border-left: 1px solid rgba(109, 18, 140, 0.65);
+  box-shadow: 0px 0px 8px rgba(109, 18, 140, 0.95);
 }
 
 .formContainer {
@@ -240,8 +238,9 @@ div.fotorama__dot {
   display: block;
 }
 
-#textarea textarea{
+#textarea textarea, #contactForm input{
   width: 40%;
+  border-radius: 6px;
 }
 
 #contactMessage{
@@ -263,7 +262,7 @@ form .error {
 .footerContainer .links img{
   width: 5%;
   height: 3%;
-  padding: 4%;
+  margin: 4%;
   transition-duration: .3s;
 }
 
@@ -411,7 +410,7 @@ form .error {
   }
 
   .new .homeBox:hover {
-    transform: translate(60px, 80px);
+    transform: translate(10px, 20px);
   }
 
   .nav-bar li a {
@@ -471,4 +470,4 @@ form .error {
     display: block;
     float: none;
   }
-}6
+}
