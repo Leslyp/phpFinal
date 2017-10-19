@@ -213,8 +213,8 @@ div.fotorama__dot {
 }
 
 .selectedItem img {
-  width: 60%;
-  height: 60%;
+  width: 30%;
+  height: 30%;
 }
 
 /*************** START Search STYLE ***************/
@@ -397,6 +397,11 @@ form .error {
     font-size: 12px;
     width: 95%;
   }
+
+  .selectedItem img {
+    width: 60%;
+    height: 60%;
+  }
 }
 
 /* MEDIA QUERY - to add translate transformation when screen is wider */
@@ -466,4 +471,4 @@ form .error {
     display: block;
     float: none;
   }
-}
+}6
